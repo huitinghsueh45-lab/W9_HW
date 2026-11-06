@@ -1,0 +1,470 @@
+/* ==========================================================================
+   Warm Academic Notebook & Review Index Theme (暖白松石綠・結構化複習筆記風格)
+   Background: #faf9f5 | Card: #ffffff | Primary Pine-Teal: #2d665b / #367a6d
+   Soft Pill:  #e9f2f0 | Callout Bg: #f3f7f6 | Subtle Border: #e4e7e2
+   ========================================================================== */
+
+:root {
+  --bg-page: #faf9f5;
+  --bg-card: #ffffff;
+  --bg-callout: #f3f7f6;
+  --border-card: #e4e7e2;
+  --border-table-head: #263834;
+  --border-table-row: #dce2df;
+
+  --text-title: #1d312c;
+  --text-primary: #243330;
+  --text-secondary: #3d4f4b;
+  --text-muted: #687a75;
+
+  /* Core Academic Pine-Teal & Warm Earth Accents */
+  --accent-steel: #2d665b;
+  --accent-steel-bright: #367a6d;
+  --accent-pill-bg: #e8f2ef;
+  --accent-pill-text: #25574d;
+
+  --accent-crimson: #b84a39;
+  --accent-emerald: #2b6e56;
+  --accent-amber: #a36224;
+
+  --theme-color: #2d665b;
+}
+
+/* Base Page Layout & Typography */
+body {
+  background-color: var(--bg-page) !important;
+  color: var(--text-primary) !important;
+  font-family: 'Noto Sans TC', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.8;
+  letter-spacing: 0.015em;
+  -webkit-font-smoothing: antialiased;
+}
+
+main,
+.content,
+.markdown-section {
+  background-color: var(--bg-page) !important;
+  color: var(--text-primary) !important;
+}
+
+.markdown-section {
+  max-width: 920px !important;
+  padding: 2.6rem 2.25rem 4.5rem !important;
+  margin: 0 auto;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  background-color: #f4f3ee !important;
+  border-right: 1px solid var(--border-card) !important;
+  color: var(--text-secondary) !important;
+}
+
+.sidebar .app-name-link {
+  font-family: 'Noto Serif TC', Georgia, serif;
+  color: var(--text-title) !important;
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 0.03em;
+}
+
+.sidebar ul li a {
+  color: var(--text-muted) !important;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.sidebar ul li.active > a,
+.sidebar ul li a:hover {
+  color: var(--accent-steel) !important;
+  background-color: var(--accent-pill-bg);
+  font-weight: 600;
+}
+
+.sidebar-toggle {
+  background-color: rgba(250, 249, 245, 0.9) !important;
+}
+
+/* Search Input in Sidebar */
+.search {
+  border-bottom: 1px solid var(--border-card) !important;
+  padding: 12px !important;
+}
+
+.search input {
+  background-color: #ffffff !important;
+  border: 1px solid #d0d7d4 !important;
+  color: var(--text-primary) !important;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem !important;
+  font-size: 0.9rem;
+}
+
+.search input:focus {
+  border-color: var(--accent-steel-bright) !important;
+  box-shadow: 0 0 0 3px rgba(54, 122, 109, 0.14) !important;
+}
+
+/* Editorial Title & Headings */
+.markdown-section h1 {
+  font-family: 'Noto Serif TC', 'Songti TC', 'PMingLiU', Georgia, serif !important;
+  font-size: 2.35rem !important;
+  font-weight: 700 !important;
+  color: var(--text-title) !important;
+  border-bottom: none !important;
+  margin: 0 0 0.45rem 0 !important;
+  padding-bottom: 0 !important;
+  letter-spacing: 0.035em;
+  line-height: 1.32;
+}
+
+.report-subtitle {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin: 0.35rem 0 1rem 0;
+}
+
+.report-divider,
+.markdown-section hr {
+  border: none !important;
+  border-bottom: 2px solid var(--accent-steel-bright) !important;
+  opacity: 0.75;
+  margin: 1.2rem 0 1.65rem 0 !important;
+}
+
+.markdown-section h2 {
+  font-family: 'Noto Serif TC', 'Noto Sans TC', serif !important;
+  font-size: 1.32rem !important;
+  font-weight: 700 !important;
+  color: var(--text-title) !important;
+  margin-top: 1.9rem !important;
+  margin-bottom: 0.95rem !important;
+  padding-left: 0 !important;
+  border-left: none !important;
+}
+
+.markdown-section h3 {
+  font-size: 1.06rem !important;
+  font-weight: 600 !important;
+  color: var(--accent-steel) !important;
+  margin-top: 1.3rem !important;
+}
+
+.markdown-section p,
+.markdown-section li {
+  color: var(--text-secondary) !important;
+  font-size: 0.96rem;
+  line-height: 1.8;
+}
+
+.markdown-section strong {
+  color: var(--text-primary) !important;
+  font-weight: 600;
+}
+
+.markdown-section a {
+  color: var(--accent-steel) !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+
+.markdown-section a:hover {
+  color: var(--text-title) !important;
+}
+
+/* Rounded Review Cards with Subtle Top Accent */
+.card,
+.dashboard-card,
+.module-block {
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-card) !important;
+  border-top: 3px solid var(--accent-steel-bright) !important;
+  border-radius: 12px !important;
+  padding: 1.55rem 1.8rem !important;
+  margin: 1.35rem 0 !important;
+  box-shadow: 0 2px 12px rgba(29, 49, 44, 0.035) !important;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover,
+.dashboard-card:hover {
+  box-shadow: 0 6px 18px rgba(29, 49, 44, 0.06) !important;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1.15rem;
+  margin: 1.25rem 0;
+}
+
+/* Section Label inside Card */
+.section-kicker {
+  color: var(--accent-steel);
+  font-size: 0.92rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* Card Header */
+.card-title {
+  font-family: 'Noto Serif TC', 'Noto Sans TC', serif;
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: var(--text-title);
+  margin: 0 0 0.85rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.card-title .pipe-sep {
+  color: #cbd5e1;
+  margin: 0 0.35rem;
+  font-weight: 400;
+}
+
+/* Source PDF Link Button inside Section Header */
+.pdf-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background-color: var(--accent-pill-bg);
+  color: var(--accent-pill-text) !important;
+  border: 1px solid #cce0db;
+  border-radius: 6px;
+  padding: 0.22rem 0.7rem;
+  text-decoration: none !important;
+  transition: all 0.15s ease;
+}
+
+.pdf-link:hover {
+  background-color: var(--accent-steel-bright);
+  color: #ffffff !important;
+  border-color: var(--accent-steel-bright);
+}
+
+/* Pills & Tags */
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.6rem 0;
+}
+
+.badge,
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  letter-spacing: 0.02em;
+  margin-right: 0.3rem;
+  margin-bottom: 0.25rem;
+  line-height: 1.4;
+}
+
+/* Completed Week Pill (Calm Soft Sage) */
+.badge-sky,
+.badge-emerald {
+  background-color: var(--accent-pill-bg);
+  color: var(--accent-pill-text);
+  border: 1px solid #cde0db;
+}
+
+/* Latest Week Pill (Calm Solid Pine-Teal — Refined & Understated) */
+.badge-latest {
+  background-color: var(--accent-steel);
+  color: #ffffff;
+  border: 1px solid var(--accent-steel);
+  font-weight: 500;
+}
+
+/* Subtle "最新" Tag in Table & Sidebar */
+.badge-new {
+  display: inline-block;
+  background-color: var(--accent-pill-bg);
+  color: var(--accent-steel);
+  border: 1px solid #b8d4cd;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.06rem 0.45rem;
+  border-radius: 6px;
+  margin-left: 0.35rem;
+  vertical-align: middle;
+}
+
+/* Back to Directory Navigation Bar */
+.back-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.btn-back-index {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background-color: #ffffff;
+  color: var(--accent-steel) !important;
+  border: 1px solid #d0d7d4;
+  border-radius: 9999px;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none !important;
+  transition: all 0.15s ease;
+}
+
+.btn-back-index:hover {
+  background-color: var(--accent-pill-bg);
+  border-color: var(--accent-steel-bright);
+  color: var(--text-title) !important;
+}
+
+/* Outlined Neutral Pill (Uncompiled weeks) */
+.badge-amber,
+.badge-outline {
+  background-color: #ffffff;
+  color: var(--text-muted);
+  border: 1px solid #d5dcd9;
+}
+
+/* Key Takeaways Callout Box (Bullet-Point Optimized) */
+.callout-box,
+.markdown-section blockquote {
+  background-color: var(--bg-callout) !important;
+  border-left: 4px solid var(--accent-steel-bright) !important;
+  border-top: none !important;
+  border-right: none !important;
+  border-bottom: none !important;
+  color: var(--text-secondary) !important;
+  padding: 1.15rem 1.4rem !important;
+  border-radius: 0 8px 8px 0 !important;
+  margin: 1.2rem 0 0.4rem 0 !important;
+}
+
+.callout-title {
+  color: var(--accent-steel);
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  display: block;
+  letter-spacing: 0.02em;
+}
+
+.callout-box ul {
+  margin: 0.25rem 0 0 0 !important;
+  padding-left: 1.25rem !important;
+}
+
+.callout-box li {
+  margin-bottom: 0.4rem !important;
+  line-height: 1.72 !important;
+  color: var(--text-secondary) !important;
+}
+
+.callout-box li:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Minimalist Academic Tables */
+.markdown-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.9rem 0;
+  background-color: transparent !important;
+  display: table !important;
+}
+
+.markdown-section table tr {
+  background-color: transparent !important;
+  border-top: none !important;
+}
+
+.markdown-section table tr:nth-child(2n) {
+  background-color: transparent !important;
+}
+
+.markdown-section table th {
+  background-color: transparent !important;
+  color: var(--text-muted) !important;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  border: none !important;
+  border-bottom: 1.5px solid var(--border-table-head) !important;
+}
+
+.markdown-section table td {
+  padding: 0.85rem 0.75rem;
+  border: none !important;
+  border-bottom: 1px solid var(--border-table-row) !important;
+  color: var(--text-primary) !important;
+  font-size: 0.95rem;
+}
+
+/* Semantic Value Highlights in Tables */
+.val-up {
+  color: var(--accent-crimson);
+  font-weight: 600;
+}
+
+.val-down {
+  color: var(--accent-emerald);
+  font-weight: 600;
+}
+
+.val-steel {
+  color: var(--accent-steel);
+  font-weight: 600;
+}
+
+.table-footnote {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  margin-top: 0.55rem;
+  line-height: 1.6;
+}
+
+/* Code Blocks & Inline Code */
+.markdown-section code {
+  font-family: 'JetBrains Mono', Consolas, monospace !important;
+  background-color: #f1f4f2 !important;
+  color: #1d312c !important;
+  border: 1px solid #dce2df;
+  padding: 0.12rem 0.4rem !important;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+.markdown-section pre {
+  background-color: #f6f8f7 !important;
+  border: 1px solid #dce2df;
+  border-radius: 10px;
+  padding: 1.05rem 1.25rem !important;
+  margin: 0.95rem 0 !important;
+}
+
+.markdown-section pre > code {
+  background-color: transparent !important;
+  color: #1d312c !important;
+  border: none;
+  padding: 0 !important;
+}
