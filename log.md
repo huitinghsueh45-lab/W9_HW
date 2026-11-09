@@ -2,6 +2,7 @@
 
 | 時間戳記 (Timestamp) | 類型 (Type) | 影響範圍 (Affected Paths) | 變更摘要 (Summary) |
 | :--- | :---: | :--- | :--- |
+| `2026-11-09 10:00` | `COMPILE` | `docs/week-03.md`, `docs/index.md`, `docs/_sidebar.md`, `assets/style.css`, `index.html`, `.github/workflows/compile_week.yml`, `log.md` | 1. 雙源解析 `raw/PPT/03AI為什麼每次都不一樣？.pdf` 與 `raw/HW/03_中興大學 8113026207 科管博 薛慧婷.pdf`，編譯生成 `docs/week-03.md`（涵蓋 GAN 對抗網路、StyleGAN AdaIN、Cross-Entropy/KL 散度與台股 [20,8] 張量預測 AI Canvas）；2. 於首頁新增「⚡ 自動化維護 Agent 實測控制台（供助教一鍵編譯生成 Week 03 頁面）」互動按鈕與即時終端機日誌；3. 新增 `.github/workflows/compile_week.yml` 支援雲端 `workflow_dispatch` 手動按鈕觸發與 `raw/` 推播自動編譯。 |
 | `2026-11-06 15:46` | `UPDATE` | `W9_HW_協作歷程與成果摘要.md`, `log.md` | 彙整本次專案從骨架建置、雙源 PDF 編譯（Week 01/02/05）、六階段修改歷程、404 離線快取排解到封裝 Agent Skill 之完整紀錄，產出供後續與 Gemini 協作撰寫作業報告之摘要檔。 |
 | `2026-11-06 15:41` | `UPDATE` | `.agents/skills/compile-weekly-course/`, `log.md` | 將專案所有版面規範、全站統一命名、雙源 PDF 萃取腳本（`extract_week_pdfs.py`）、內頁標準範本（`week-template.md`）與雙模式零 404 同步腳本（`sync_site.py`）封裝為可重複執行的 Agent Skill（`compile-weekly-course`）。 |
 | `2026-11-06 15:37` | `COMPILE` | `docs/week-05.md`, `docs/week-02.md`, `docs/index.md`, `docs/_sidebar.md`, `index.html`, `log.md` | 雙源解析 `raw/PPT/05AI怎麼記得前面說過什麼？.pdf` 與 `raw/HW/05_中興大學 8113026207 科管博 薛慧婷 用 Vibe Coding 做出一個互動網頁.pdf`；生成 `docs/week-05.md`（涵蓋 RNN/Transformer QKV 注意力機制、位置編碼、ResNet/Norm 與台股盤後選股報告互動網站實作），並同步更新首頁、側邊欄與離線快取。 |

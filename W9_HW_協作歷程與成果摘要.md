@@ -88,14 +88,24 @@
   - 完成 `docs/week-05.md`（涵蓋 RNN 隱藏狀態、Transformer QKV 縮放點積注意力 $\text{softmax}(QK^T/\sqrt{d_k})V$、位置編碼、ResNet 殘差連結、LayerNorm/RMSNorm/DyT，以及結合台灣 50 Softmax 模型與 GitHub Actions 自動更新的「台股盤後選股報告互動網站」v1～v9 實作解析）。
   - 建立 **`.agents/skills/compile-weekly-course/`** 技能包（含 `SKILL.md`、`scripts/extract_week_pdfs.py`、`scripts/sync_site.py`、`resources/week-template.md`），實現一鍵萃取、標準化編譯與離線快取打包。
 
+### 🔹 階段 7：第 03 週教材編譯、助教一鍵編譯按鈕與 GitHub Actions 自動化（v8）
+- **需求輸入**：
+  1. 將第 03 週講義（`03AI為什麼每次都不一樣？.pdf`）與作業（`03_中興大學 8113026207 科管博 薛慧婷.pdf`）放入 `raw/` 對應目錄。
+  2. 設計**助教一鍵編譯按鈕**與 **GitHub Actions 自動化工作流**，讓助教在無 GitHub 後台權限時能直接在網頁前端點擊按鈕體驗生成 `Week 03` 頁面，同時支援儲存庫後台 `Run workflow` 雲端執行。
+- **AI 實作與改善**：
+  - **雙源編譯 `docs/week-03.md`**：完整萃取 GAN 對抗網路、StyleGAN 搭配 `AdaIN` 風格控制、香農熵/交叉熵（Cross-Entropy）/ KL 散度，並與作業之「呆萌型台股短線預測機器人 AI Canvas（`[20,8]` 輸入張量、三分類 Softmax 輸出、四大開源 API 與 192 萬筆滑動視窗樣本估算）」及第 05 週真實落地成果進行跨週次整合。
+  - **前端「⚡ 自動化維護 Agent 實測控制台」**：於首頁頂部設計互動面板，助教點擊 **「⚡ 一鍵執行 Agent 編譯生成 Week 03 頁面」** 後，即時播放四階段終端機編譯日誌動畫、自動解鎖首頁 `Week 03` 膠囊標籤、動態插入總覽表格列與側邊欄導覽，並提供「🔄 重置回待編譯狀態」按鈕供重複測試。
+  - **雲端 GitHub Actions（`.github/workflows/compile_week.yml`）**：支援 `workflow_dispatch` 手動輸入週次編號與 `raw/**/*.pdf` 推播自動觸發，於雲端執行 `extract_week_pdfs.py` 與 `sync_site.py` 並自動 Commit 回存。
+
 ---
 
-## 四、已收錄週次（Week 01、02、05）內容精華總覽
+## 四、已收錄週次（Week 01、02、03、05）內容精華總覽
 
 | 週次 | 內頁檔案 | 課堂摘要核心（`raw/PPT/`） | 作業摘要核心（`raw/HW/`） | 技術關聯與延伸應用（`PPT × HW`） |
 | :---: | :--- | :--- | :--- | :--- |
 | **01** | `docs/week-01.md` | 破除三大 AI 焦慮、呆萌型機器人函數映射 $Y=f_\theta(X)$、Colab 四大奇幻世界（`%` 魔術指令、`plt.plot`、LaTeX、`interact`） | 基礎函數 $f(x)=3x+2$、Part I 簡單線性迴歸（OLS 與殘差圖）、Part II 3D 多元迴歸平面（控制變因分析）、Part III 邏輯斯迴歸 | 銀行信用卡違約審查四大決策：模型信心度判讀、隨景氣動態調整核貸門檻（50% $\leftrightarrow$ 70%/20%）、線性可分檢驗與隱形資產挖掘 |
 | **02** | `docs/week-02.md` | 張量（Tensor）、One-Hot 編碼、Softmax 機率轉換、人工神經元與 ReLU、梯度下降法 $\theta \leftarrow \theta - \eta\nabla L$、高維外插本質 | MNIST 手寫辨識 A/B/C/D 四版本控制變因實驗：擴充容量至 `512-256-128-64` + `Dropout(0.3)` + `Adam` 達 **98.12%** 準確率 | 證明不同 Loss 量尺不可直接比大小、網路容量與優化器為主因；剖析 Gradio 實測「6、8」失準之**資料分佈偏移（Distribution Shift）**與 DNN 空間盲點 |
+| **03** | `docs/week-03.md` | 一對多生成與潛張量 $z$、GAN 極小極大博弈、StyleGAN `AdaIN`、Pix2Pix/CycleGAN、香農熵、Cross-Entropy 與 KL 散度 | 呆萌型台股短線趨勢預測機器人 AI Canvas：`[20,8]` 價量籌碼二階張量輸入、未來 5 日三分類機率輸出、1,600 檔 $\times$ 5 年滑動視窗建構 192 萬筆訓練樣本 | 串聯 Week 03 企劃規格與 Week 05 真實落地（Log-loss `0.948`）；從 LLM 輸出端隨機抽樣（Sampling）原理剖析為何數值排序須改用確定性程式 |
 | **05** | `docs/week-05.md` | RNN 隱藏狀態迴路、Transformer QKV 自注意力與 $\sqrt{d_k}$ 縮放、正餘弦位置編碼、ResNet 殘差與 RMSNorm/DyT、Vibe Coding 規格書流程 | 整合 W3 模型與 W4 規則打造「台股盤後選股報告互動網站」（台灣 50 `20×8` 特徵 Softmax 迴歸、前端推論、個股明細抽屜、GitHub Actions 排程） | 以 JS 確定性程式解決 LLM 字數與排序幻覺（Neuro-Symbolic 思維）、建立「籌碼覆蓋率 < 80% 自動回退前一日」防呆機制，並規劃升級至 Transformer 時序模型 |
 
 ---

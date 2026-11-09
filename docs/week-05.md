@@ -1,6 +1,6 @@
 <div class="back-nav-bar">
   <a href="#/" class="btn-back-index">← 回到課程總覽目錄</a>
-  <a href="#/week-02" class="btn-back-index">← 上一週：Week 02 神經網路與手寫辨識</a>
+  <a href="#/week-03" class="btn-back-index">← 上一週：Week 03 AI 為什麼每次都不一樣</a>
 </div>
 
 # 第 05 週課程精要：Transformer 注意力機制與 Vibe Coding 互動網頁實作
@@ -242,5 +242,5 @@
 
 <div class="back-nav-bar" style="margin-top: 2rem;">
   <a href="#/" class="btn-back-index">← 回到課程總覽目錄</a>
-  <a href="#/week-02" class="btn-back-index">← 上一週：Week 02 神經網路與手寫辨識</a>
+  <a href="#/week-03" class="btn-back-index">← 上一週：Week 03 AI 為什麼每次都不一樣</a>
 </div>

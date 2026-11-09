@@ -2,7 +2,7 @@
   <a href="#/" class="btn-back-index">← 回到課程總覽目錄</a>
   <div>
     <a href="#/week-01" class="btn-back-index">← 上一週：Week 01</a>
-    <a href="#/week-05" class="btn-back-index">下一週：Week 05 →</a>
+    <a href="#/week-03" class="btn-back-index">下一週：Week 03 →</a>
   </div>
 </div>
 
@@ -241,6 +241,6 @@
   <a href="#/" class="btn-back-index">← 回到課程總覽目錄</a>
   <div>
     <a href="#/week-01" class="btn-back-index">← 上一週：Week 01</a>
-    <a href="#/week-05" class="btn-back-index">下一週：Week 05 →</a>
+    <a href="#/week-03" class="btn-back-index">下一週：Week 03 →</a>
   </div>
 </div>
