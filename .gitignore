@@ -1,0 +1,9 @@
+# 作業報告協作摘要檔（僅供本地與 Gemini 協作撰寫報告使用，不上傳至 GitHub）
+W9_HW_協作歷程與成果摘要.md
+
+# PDF 解析文字暫存與系統快取
+.agents/skills/compile-weekly-course/.cache/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
